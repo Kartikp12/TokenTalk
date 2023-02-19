@@ -37,7 +37,7 @@ function Index() {
       provider,
       signer,
     });
-    
+
     router.push(`/room/${address}`);
   };
 
@@ -48,7 +48,7 @@ function Index() {
           <div className="pl-[30px] mt-[100px] w-[400px]">
             <div className="text-center">
               <span className="text-[35px]">Start with TokenTalk!</span>
-              <p>Decentralised consultation with money streaming</p>
+              <p>Why pay for more than you need? Consult with top professionals and pay only for what you use.</p>
             </div>
             <div className="mt-[25px]">
               <div className="">
@@ -68,7 +68,7 @@ function Index() {
                     id="token"
                     className="w-full px-[10px] py-[7px] border"
                   >
-                    <option value="daix">Daix</option>
+                    <option value="fdaix">fDaix</option>
                   </select>
                 </div>
               </div>
@@ -81,7 +81,7 @@ function Index() {
               <div className="mt-[30px]">
                 <button
                   onClick={() => generateLink()}
-                  className="px-[20px] py-[10px] rounded-lg bg-[#7DB9B6] text-white w-full"
+                  className="px-[20px] py-[10px] rounded-lg bg-[#C44590] text-white w-full"
                 >
                   Start Instant Consultation
                 </button>

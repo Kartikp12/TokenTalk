@@ -29,7 +29,7 @@ import { Framework } from "@superfluid-finance/sdk-core";
 
 export default function Room() {
   const huddleClient = getHuddleClient(
-    "052d7c4930885c3e9d837eb1e1eeab370465806b3315e96dc6afd9a734bc9068"
+    process.env.HUDDLE_KEY
   );
   const peersKeys = useHuddleStore((state) => Object.keys(state.peers));
   const lobbyPeers = useHuddleStore((state) => state.lobbyPeers);
@@ -148,7 +148,7 @@ export default function Room() {
                       <MeVideoElem />
                     </div>
                     <div className="w-[700px]">
-                      <div>
+                      <div className="">
                         {peersKeys.map((key) => (
                           <>
                             <PeerVideoAudioElem
@@ -237,10 +237,14 @@ export default function Room() {
         </div>
 
         <Chat
-          account={address} //user address
-          supportAddress={finalRoomId} //support address
-          apiKey="QTTrzDhTFA.M39A2bR1H0mJOkaOiHKGwnR2HJ48BwEknyr74aO89dQNXyJL3FIoFmPQ7QcgIqtc"
+          account={address}
+          supportAddress={finalRoomId}
+          greetingMsg="Welcome Opponent"
+          modalTitle="Chat With Consultant"
+          apiKey={process.env.PUSH_KEY}
+          // apiKey="QTTrzDhTFA.M39A2bR1H0mJOkaOiHKGwnR2HJ48BwEknyr74aO89dQNXyJL3FIoFmPQ7QcgIqtc"
           env="staging"
+          // theme={theme}
         />
       </main>
     </div>
